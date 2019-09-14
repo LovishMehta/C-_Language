@@ -1,0 +1,66 @@
+Output instruction:
+In C++ we can have printf() function to print data to monitor as it's super set of C.
+=> Along with that we also have "cout" to print data to monitor.
+=> "cout" is a predefined object whereas "printf" is a predifined function 
+=> The operator " << " is called the insertion or put to operator. This is an operator which inserts string or data in 
+   output stream.
+
+Examples(Both can be used in c++ )
+printf("Hello");
+cout<<"Hello";
+
+printf("sum of %d and %d is %d",a,b,c);
+cout<<"sum of"<<a<<" and"<<b<<" is"<<c;
+
+printf("%d",a+b);
+cout<<a+b;
+
+***********************************************************************************************************************************
+Input Instruction:
+***********************************************************************************************************************************
+In c++ along with "scanf()" we also have "cin" to recieve data from keyboard.
+=> "cin" is a predefined object whereas "scanf()" is a predefined function.
+=> we use " >> " extraction operator with cin. This operator is also called get operator.
+
+Example
+scanf("%d",&a);
+cin>>a;
+
+scanf("%d%d",&a,&b);
+cin>>a>>b;
+
+scanf("%d%f",&a,&c);
+cin>>a>>c;
+
+NOTE: Predefined functions are declared in header file, so whenever you are using any predefined function in your code
+      ,you have to include specific header file that contains its declaration.
+  
+**********************************************************************************************************************************
+Iostream (input output stream)
+**********************************************************************************************************************************
+ => iostream is a header file which contains declaration for the identifiers cout, cin and operators << and >>.
+ => Header files contains declaration of identifiers
+ 
+ Identifiers can be functions names, variables, objects, Macros etc.
+ 
+=> "endl" => with this the screen moves to the beginning of the next line. 
+   Similar to "\n". Even \n can be used.
+   
+  ***************************************************************************************************************************
+  Examples
+  
+  #include<iostream.h>
+  #include<conio.h>
+  
+  void main()
+  {
+  clrscr();
+  int x;
+  cout<<"Enter number"<<endl;
+  cin>>x;
+  int s=x*x;     // Dynamic initialization
+  cout<<"Square of"<<x<<"is "<<s;
+  getch();
+  }
+  
+ 
