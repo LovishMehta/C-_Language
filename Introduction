@@ -1,0 +1,53 @@
+Middle level Programming (Low level programming (which near to hardware) + Middle level programming)
+
+C++ joins three separate programming traditions
+1. Procedural language tradition (same as C)
+2. the Object Oriented language tradition represented by the class enhancements C++ adds to C.
+3. Generic Programming supported by c++ tempalates.
+
+Comparision Between C and C++
+1. C++ superset of C language (saare features hai jo C mai the aur thoda additions bhi aa gay hai)
+2. C++ programs can use existing C software libraries ( we can use scanf(), printf(), getch() etc)
+3. C adopts Procedure oriented Progrmming
+4. C++ adopts Object oriented Programming (as well as Procedure oriented programming)
+
+What is Object oriented Programming?
+OOPs is a programming approach which revolves around the concept of "Object".
+
+=> Any entity in the system that can be defined as a set of properties and set of operations performed using entity's
+   property set, is known as Object.
+   Also the variable created using class as a new data type is called an Object. (similar to concept of struct)
+   
+5 key principals Mentioned in object oriented programming.
+1.Encapsulation.
+2.Data Hiding
+3. Abstraction.
+4. Polymorphism.
+5. Inheritance.
+
+Classes and Objects
+
+=>Class is a blueprint of an object
+=>class is a description of Object's property set and set of operation
+=>Creating class is as good as defining a "new data type".
+=>Class is means to achieve encapsulation.
+(Class ko memory ni milti, memory milti hai object ko jo us class ko use karke k banti hai.)
+=>Object is a runtime entity.(i.e memory is allocated during runtime)
+
+Example
+
+Class box
+{
+ int l,b,h;
+ void setDimension(int x,int y,int z)
+ {...}
+ };
+
+int main()
+{
+  box b1;  // created a varible of data type box but here we say created an Object of Class Box
+  }
+
+
+
+
