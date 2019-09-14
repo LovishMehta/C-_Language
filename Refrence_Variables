@@ -1,0 +1,23 @@
+Ordinary Variable
+int x=5
+
+pointer Variable
+int *p (a variable which contains address of a variable)
+p = &x;
+
+New type of variable introduced in c++ called "Refrence Variable".
+
+=> int &y=x;                   (y is a refrence variable and it should be initialized during declaration only)
+
+(y mai x ka address aa gya hai par agar mai y++ karunga to x ki value increment hogi na ki adress jaise ki pointer mai hota hai.
+ refrence variable is just a way to use x from some another variable.)
+ 
+ PROPERTIES
+=> Refrence means address
+=> Refrence variable is an internal pointer (if asked in interview tell this)
+=> Declaration of REfrence variable is preceded with '&' symbol(but do not read it as 'address of')
+=> Refrence variable must be initialized during declaration
+=> It can be initialized with already declared variables only.
+=> Refrence variables cannot be updated.
+( hum refrence variable mai ek baar koi value initialize kar de jaise ki upar x ki Kar di to vo dobar kabhi bhi change ni ki ja
+  sakti. Unlike pointer it cannot be changed).
