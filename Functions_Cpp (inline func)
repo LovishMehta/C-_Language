@@ -1,0 +1,101 @@
+Functions is block of code performing a unit task.
+Function has a name,return type and arguments.
+
+=> Functions are 2 types
+1. Predefined functions: functions which are declared in header files and defined in library files.
+2. User defined functions : functions defined by user
+
+Arguments of Functions are of 2 types:
+1. Actual arguments
+2. Formal Arguments
+
+The major difference between actual and formal arguments is that actual arguments are the source of information; calling 
+programs pass actual arguments to called functions. The called functions access the information using corresponding formal arguments.
+   
+   #include<iostream.h>
+    int sum(int,int);
+   
+   void main()
+   {
+     int a=5,b=6;
+     int s = sum(a,b);    // a and b are Actual arguments
+     cout<<"sum is""<<s;
+     }
+   int sum(int x,int y)    // X and Y are formal arguments
+   {
+   return(x+y);
+   }
+   
+Formal Arguments are of 3 types:
+1. ordinary variable of any type => call by value    fun(int x,int y)
+2. pointers variables            => call by address  fun(int *x,int *y)
+3. refrence variables            => call by refrence fun(int &x,int &y)
+
+************************
+Inline Function
+************************
+
+(Jab function call hota hai to vo RAM mai aata hai i.e use memory allocate hoti hai ram mai aur jab vo execute ho jata hai
+tab memory release kar di jaati hai.)
+
+=> However every time a function is called, it takes lot of extra time in executing a series of instruction such as jumping
+   to the function, saving registers, pushing arguments into the stack and returning to the calling function.
+  
+=> So when function is small it is worthless to spend so much extra time in suh tasks in cost of saving compartively small 
+   space
+   
+   INLINE FUNCTION
+=> To eleminate the cost of calls to small functions c++ proposes a new feature called inline function.
+=> An inline function is a function that is expaned in line when it is invoked
+Meaning: Compiler replaces the function call with the corresponding function code.
+
+Example
+#include <iostram.h>
+inline void fun();      // write inline only during declaration, No need while defining function
+
+void main()
+{
+ fun();
+}
+
+void fun()
+{
+  cout<<"You are in Fun functio"<<endl;
+
+
+NOTE: Inline is a request not a command, it does not guarantee the function call will be replaced with dunction code.
+      Because benefits of speed of inline function reduces as the function grows in size.
+      So compiler may ignore the the requesr in some situations.
+      Few of them:
+    => Function containing loops, switch, goto.
+    => Functions with recurssion.
+    => Containing static variable
+    
+ *********************************************
+ Default Arguments
+ *********************************************
+ 
+ #include<iostream.h>
+ 
+int add(int,int,int=0)   // Now I have declared 3rd argument default value to be zero, also called as default value
+                         // In this case if we call the function using onlu two argument add(5,6) then the value of 3rd variable
+                         // will be taken as 0 by default
+void main()
+{
+  int a,b,c;
+  cout<<"Enter Two numbers\n";
+  cin>>a>>b;
+  add(a,b);    // this will add a+b+0 as if nothing is passed by default value of 3rd argument is zero
+  cout<<"Enter 3 number\n";
+  cin>>a>>b>>c;
+  add(a,b,c);  // this will add a+b+c as some value is passed in 3rd rgument so it will take that value not default value
+}
+void add(int a,int b,int c)
+{
+  return (a+b+c);
+}
+
+******************************************************************************************************************************
+  
+     
+
