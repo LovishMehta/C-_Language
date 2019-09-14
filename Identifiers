@@ -1,0 +1,30 @@
+Constants: Any information is constant
+           Data = information = constant
+           
+Types of Constant
+1. Primary Constant
+   i) Integer 1,-345,897
+  ii) Real    3.4,-0.06,3.0
+ iii) Character  'a','A','+','c'
+ 
+2. Secondary costant (They are made using primary constants that's why called secondary constants)
+  Array
+  String    "saurabh"
+  Pointer
+  Union
+  Structure
+  Enumerator
+  Class
+  
+  Variables : Variables are the names of the memory locations where we store data.
+  => Variable name is any combination of alphabet (a to z or A to Z), digit(0 t0 9) and underscore(_)
+  => Varible name cannot start with digit.
+  
+ 3. Keywords: keywords are the reserved words which are known by the compiler and cannot be used as variable names.
+ 
+ DATA TYPEs:
+ 1. int       int a=5,b=6;     //consumes 2 bytes/ 4bytes   // integer
+ 2. char      char c='a';      // consumes 1 byte           // character
+ 3. float     float k=3.45;    // consumes 4 bytes          // real
+ 4. double    double d1;       // consumes 8 bytes          // real
+ 5. void
