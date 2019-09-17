@@ -1,0 +1,31 @@
+The only difference between structure and class is that
+=> The members of structures are by defualt "public"
+    and, whereas
+=> The members of class are by default "private" 
+
+// All the members in this function are public by default and hence can be accessed from outside.
+struct complex
+{
+  int a,b;
+  
+  void set data(int x,int y)
+  { a=x; b=y;}
+  void show_data()
+  { cout<<"\na"<<a<<" b "<<b;
+  }
+}
+
+// All the members in this function are "private" by default and hence cannot be accesed from outside withoud declaring public
+class complex
+{
+  int a,b;
+  
+  void set data(int x,int y)
+  { a=x; b=y;}
+  void show_data()
+  { cout<<"\na"<<a<<" b "<<b;
+  }
+}
+
+
+ 
