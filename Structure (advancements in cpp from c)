@@ -1,0 +1,77 @@
+=> In C++ its not compulsory to write struct keyword before defining variable using struct data type
+   E.g. In c we write => struct data b;   whereas in c++ we can write => data d;
+   
+=> In C++ we can even define "functions" inside the structure where in c we cannot.
+Example:
+#include<conio.h>
+#include<iostream>
+using namespace std;
+
+struct student
+ {
+   int books;
+   char name[10];
+   
+   void input()
+   {
+    cout<<"Enter NAMe\n";
+    cin>>name;
+    cout<<"Number of books\n";
+    cin>>books;
+    }
+    void display()
+    {
+       cout<<"NAME is :"<<name<<" and books "<<books<<endl;
+    }
+};
+
+int main()
+{
+	student s1;
+	s1.input();
+	s1.display();
+	return 0;
+}
+
+=> We can have "Access Specifier" in structure of C++ whereas in C no provision was there.
+   Access modifiers are used to implement an important feature of Object-Oriented Programming known as Data Hiding.
+   1. Private
+   2. Protected
+   3. Public
+   
+   Example
+   Example:
+#include<conio.h>
+#include<iostream>
+using namespace std;
+
+struct student
+ {
+   private:    // Access specifier, making these data members of stucutre as private.
+   int books;
+   char name[10];
+   
+   public:   // Making member function Public
+   void input()
+   {
+    cout<<"Enter NAMe\n";
+    cin>>name;
+    cout<<"Number of books\n";
+    cin>>books;
+    }
+    void display()
+    {
+       cout<<"NAME is :"<<name<<" and books "<<books<<endl;
+    }
+};
+
+int main()
+{
+	student s1;
+	s1.input();
+	s1.display();
+	return 0;
+}
+   
+
+
