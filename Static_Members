@@ -1,0 +1,117 @@
+*********************
+Static Local Variable
+*********************
+
+=> Concept as it is taken from C.
+=> Static Local variables are by default initialized to Zero (0)
+=> Their Lifetime is throughout the program.
+
+Example
+#include<iostream>
+using namespace std;
+
+void fun()
+{
+	static int count;  // its a static local varible and by default it is intialized = 0
+
+	count++;           // its lifetime is throughout the program
+	cout<<"Value of count : "<<count<<endl;
+}
+
+int main()
+{
+	for(int i=0;i<10;i++)
+	fun();
+	return 0;
+}
+
+// OUTPUT: 1 2 3 4 5 6 7 8 9 10
+
+***********************
+Static Member Variable
+***********************
+=> Declared inside the class body.
+=> Also known as class variable. (different from instance memeber varible or data member)
+=> They must be defined outside the class.
+=> Static member variable does not belong to any object. It belongs to the class that's why called class variable.
+=> There will be one copy of static members variable for the whole class.
+=> Any object can use the same copy of class variable.
+=> They can also be used with class name.
+ 
+
+Example
+#include<iostream>
+using namespace std;
+class Account
+{
+ int balance; // instance member variable
+ static float roi; // static member variable or Class Variable
+ 
+ public:
+ void set(int b)
+ {
+  balance = b;
+  }
+}
+
+flaot Account:: roi=3.5f; // the static variable must be declared outside also otherwise it will not work
+                         // declaration is done using membership label.
+
+(agar hum upar vali line likhte hai tabhi is variable ko memory milti hai par is variable ki memory object par depend nhi
+ karti tabhi ise "class variabel" kha jata na ki instance variable.)
+ 
+ void main()
+ {
+  clrscr();
+  Account a1,a2;  // a1 object mai balance naam ka variable hoga , similarly a2 object mai bhi balance naam ka variable hoga
+                     par "roi" variable ni hoga. "roi" variable poori class k liye sirf ek baar banega. 
+                     "roi" variable ka ban na aur na ban na object p depend ni kargea, agar ek bhi object nhi bnayenge to bhi
+                     "roi" variable banega. Aur 10 obejct bhi bnay to bhi "roi" variable ek baar hi banega.
+}                     
+ } 
+ 
+**********************************
+Static Member function
+**********************************
+=> They are qualified with keyword static.
+=> They are also called class member functions.
+=> They can be invoked with or without object.
+=> They can only access static members of the class.
+
+Example
+#include<iostream>
+using namespace std;
+
+class Account
+{
+ int balance; // instance member variable
+ static float roi; // static member variable or Class Variable
+ 
+ public:
+ void set(int b)
+ {
+  balance = b;
+  }
+static void fun(float r)  // static function can access only static members if the class (cannot access balance data member)
+{
+  roi = r;
+}   
+}
+
+flaot Account:: roi=3.5f; 
+
+ void main()
+ {
+  clrscr();
+  Account a1;
+  a1.fun(4.5)   // invoking using object
+  
+  Account :: fun(4.5) // invoking without object in case we have not created object of the class as we know static varible exists 
+                         even if the object is not created.
+  
+}                     
+ }
+ 
+ 
+ 
+
