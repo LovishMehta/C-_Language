@@ -61,11 +61,11 @@ void main()
 void fun()
 {
   cout<<"You are in Fun functio"<<endl;
+}
 
-
-NOTE: Inline is a request not a command, it does not guarantee the function call will be replaced with dunction code.
+NOTE: Inline is a request not a command, it does not guarantee the function call will be replaced with function code.
       Because benefits of speed of inline function reduces as the function grows in size.
-      So compiler may ignore the the requesr in some situations.
+      So compiler may ignore the the request in some situations.
       Few of them:
     => Function containing loops, switch, goto.
     => Functions with recurssion.
