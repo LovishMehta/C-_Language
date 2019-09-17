@@ -1,0 +1,31 @@
+*************************
+Constructor
+*************************
+
+=> Constructor is a member function of a class.
+=> The name of the constructor is the same as the name of the class.
+=> It has no return type, so we can't use the return keyword.
+=> It must be an instance member function that is, it can never be a static member function.
+=> Constructor is implicitly invoked when an object is created.
+( ye function apne aap call ho jata hai jab object bnai jaati hai.)
+=> Constructor is used to solve the problem of intialization.
+
+#include<iostram.h>
+#include<conio.h>
+
+class complex
+{
+ private:
+ int a,b;
+ 
+ public:
+ complex()
+ { cout<<"HELlo Constructor\n";   }
+
+void main()
+{
+ clrscr()
+ complex c1; // when we create object constructor is invoked iself , so "Hello Constructor" will be printed on screen
+ getch();
+}
+ 
