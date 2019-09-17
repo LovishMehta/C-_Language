@@ -1,5 +1,8 @@
 Identifiers can be functions names, variables, objects, Macros etc.
 
+****************
+Constants
+****************
 Constants: Any information is constant
            Data = information = constant
            
@@ -18,6 +21,10 @@ Types of Constant
   Enumerator
   Class
   
+****************
+Variables
+****************
+
   Variables : Variables are the names of the memory locations where we store data.
   => Variable name is any combination of alphabet (a to z or A to Z), digit(0 t0 9) and underscore(_)
   => Varible name cannot start with digit.
