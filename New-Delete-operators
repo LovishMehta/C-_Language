@@ -1,0 +1,28 @@
+SMA : static Memory alloction
+  Example:
+   int x;
+   float y;
+   complex c2;
+   student s1;
+The memory to be allocated is "decided" on the compile time only, so called static memory allocation.
+
+DMA : Dynamic memory allocation
+The memory to be allocated is "decided" on the Run-time
+
+**********************************************************
+new : create variable and return pointer to that variable
+***********************************************************
+int *p = new int; // will create int type variable and "new" will return the address of created variable and it will be stored in p.
+
+similarly
+float *q = new float;
+complex *ptr = new complex;
+
+// We can also create array using int
+float *q = new float[5];
+
+****************************************************************
+delete : deletes the memory allocated to the variable using new
+****************************************************************
+delete p; // delete variable pointed by p
+delete []p ; //deletes array pointed by p
