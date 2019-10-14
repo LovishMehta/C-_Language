@@ -29,3 +29,152 @@ At the core of C++ Standard template Library are following three well structured
 **********************************************************************************************************************************************************
 
 STL Containers in C++
+-> Containers library is a collection of classes which stores or contains something in them.
+-> The containers are implemented as generic class templates.
+-> Containers help us to implement and replicate simple and complex data structures very easily like
+   arrays, list, trees, associative arrays and many more.
+-> Containers can be used to hold different kind of objects.   
+
+Common containers
+- vector : replicate arrays
+- queue  : replicate queues
+- stack  : replicate stack
+- priority_queue : replicate heaps
+- list : replicates linked list
+- set : replicate list
+- map : associative arrays
+
+Classification of Containers
+1. Sequence Containers
+    - Like arrays,linked list,etc
+2. Associative Containers
+    - Sorted data structures like map,set,etc
+3. Unsorted Associative containers
+    - Unsorted Data Structures
+4. Containers Adapters
+    - Interfaces to sequence containers
+    
+    Example
+    #include<iostream>
+    #include<list>
+    int main()
+    {
+      list<int> mylist
+    }
+    
+******************************************************************************************************************************************************* 
+ Array In STL
+-> Array is a linear collection of similar elements
+-> Array continer in STL provides us the implementation of static array. i.e. The array is a container for constant size arrays.
+  
+ -> To use this STL we will include array header = > #include<array>
+                                               syntax:  array<data_type,size> obj;
+                                               Example: array<int,4> A;
+  We can also initialize while declaration:
+    array<int,5> A={11,22,33,44,55}
+    array<int, 5> ar1{{3, 4, 5, 1, 2}}
+    array<string, 2> ar3 = {{string("a"), "b"}};  output: a,b ; size = 2
+ NOTE: if you try to access index 6 in the above array which is not present then it will give an error i.e. Out of Range
+        but if we use normal array arr[], in that case complier didnot gave any error.
+  
+  Functions:
+at:     access specified element with bounds checking  // A.at(3)
+        (public member function)
+        
+operator[]:     access specified element  //A[3]
+                (public member function)
+                
+front:          access the first element 
+                (public member function)
+                
+back:           access the last element
+                (public member function)
+                
+data:           direct access to the underlying array
+                (public member function)
+
+Iterators
+
+begin:      returns an iterator to the beginning
+cbegin:    (public member function)
+ 
+end:        returns an iterator to the end
+cend:       (public member function)
+  
+ 
+rbegin:    returns a reverse iterator to the beginning
+crbegin:   (public member function)
+  
+       
+rend:       returns a reverse iterator to the end
+crend:      (public member function)
+  
+ 
+Capacity
+
+empty:    checks whether the container is empty
+           (public member function)
+ 
+
+size:       returns the number of elements
+            ( public member function)
+
+
+max_size:   returns the maximum possible number of elements
+            (public member function)
+
+
+Operations
+
+fill:         fill the container with specified value
+              (public member function)
+
+swap          swaps the contents
+              (public member function)
+              
+*****************************************************************************************************************************************
+PAIR
+-> pair is a template class in standard template library.
+-> but pair is not a part of container.
+-> It is used when we have to do pairing of data. Using this we can pair two types of data.
+-> Pair is used to combine together two values which may be different in type. 
+   Pair provides a way to store two heterogeneous objects as a single unit.
+
+SYNTAX: pair (data_type1, data_type2) Pair_name; 
+    pair<T1,T2> pair1;
+    pair<string,int> p1;
+    
+    Example: 
+    /CPP program to illustrate pair STL 
+#include <iostream> 
+#include <utility> 
+using namespace std; 
+  
+int main() 
+{ 
+    pair <int, char> PAIR1 ; 
+  
+    PAIR1.first = 100; 
+    PAIR1.second = 'G' ; 
+  
+    cout << PAIR1.first << " " ; 
+    cout << PAIR1.second << endl ; 
+  
+    return 0; 
+} 
+
+Member Functions
+1. make_pair() : This template function allows to create a value pair without writing the types explicitly.
+Syntax : Pair_name = make_pair (value1,value2);
+Example
+         pair <string, double> PAIR3 ; 
+         PAIR3 = make_pair ("GeeksForGeeks is Best",4.56);
+         o/p = GeeksForGeeks is Best 4.56
+         
+2. operators(=, ==, !=, >=, <=) : We can use operators with pairs as well.
+
+3.swap : This function swaps the contents of one pair object with the contents of another pair object. 
+         The pairs must be of same type.
+ Syntax :
+           pair1.swap(pair2) ;        
+         
