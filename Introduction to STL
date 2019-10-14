@@ -1,0 +1,31 @@
+STL is Standard template Library (predefined collection of classes)
+It is a powerful set of C++ template classes
+
+At the core of C++ Standard template Library are following three well structured components
+- Containers
+- Algorithms
+- Iterators
+
+!. Containers: Containers are used to manage collection of objects of a certain kind.
+            -> Container Library in STL provide containers that are used to create data
+               structures like arrays, linked list, trees etc.
+            -> These Containers are generic, they can hold elements of any data types.   
+            Example: vector
+2. Algorithms: Algorithms act on containers. They provide the mean by which you will perform
+               initialization, sorting, searching, and transforming of the contents of container.
+            -> Algorithms library contains built in functions that performs complex algorithms on data
+               structures.
+               e.g. reverse(), sort().
+            -> Algorithims library provides abstraction, i.e. you don't necessarily need to know how
+               the algorithms works.
+              
+3. Iterators : (Iteration means repetitions, iterator is similar to pointers which points to data stored in containers)
+           -> Iterators are used to step through the elements of collection of objects. These collection may be
+               containers or subsets of containers.
+           ->  Iterators in STL are used to point to the containers.    
+           ->  Iterators actually act as a bridge between containers and algorithms.
+           E.g. sort() algorithm have two parameters, starting iterator and ending iterator.
+           
+**********************************************************************************************************************************************************
+
+STL Containers in C++
