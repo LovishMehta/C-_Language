@@ -29,3 +29,115 @@ void main()
  getch();
 }
  
+**********************************************
+Paramaterized constructor 
+************************************************
+when argument is passed in the constructor
+
+class complex
+{
+ private:
+ int a,b;
+ 
+ public:
+ complex()
+ { cout<<"HELlo Constructor\n";   }
+ 
+ complex(int a,int b) // parametarized constructor
+ {
+   cout<<a<<" "<<b<<endl;
+   }
+}   
+
+void main()
+{
+ clrscr()
+ complex c1; // when we create object constructor is invoked iself , so "Hello Constructor" will be printed on screen
+ complex c2(3,4);
+ getch();
+}
+*************************************************
+Copy constructor
+*************************************************
+refer video : https://www.youtube.com/watch?v=6MZr5e-SUxM&list=PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF&index=26
+Compiler makes two constructor in our class 
+1. default constructor 
+2. copy constructor: so even if we don't make copy constructor even then it will work
+
+class complex
+{
+ private:
+ int a,b;
+ 
+ public:
+ complex()
+ { cout<<"HELlo Constructor\n";   }
+ 
+ complex(int a,int b) // parametarized constructor
+ {
+   cout<<a<<" "<<b<<endl;
+   }
+  // even if we don't write copy function it will be made by compiler itself 
+  complex(complex &c)  // we write &c not only c because if we make complex c, so c2 will pass in c and complex c2 will again constructor
+  {          // in this way recursive calls will start and the compiler will give error. So we use compiler &c i.e. pass the refrence of object
+    // complex(complex c) = complex(complex c=c2) which is like calling copy constructor again
+    a=c.a;
+    b=c.b;
+    }
+}   
+
+void main()
+{
+ clrscr()
+ complex c1; // when we create object constructor is invoked iself , so "Hello Constructor" will be printed on screen
+ complex c2(3,4);
+ complex c4(c2); // or complex c4 = c2;
+ getch();
+}
+
+***********************************************
+Destrucotr()
+************************************************
+=> Destructor is an instance member function of class.(i.e it is function of object )
+=> The name of the destructor is same as the name of a class but preceded by tilde(~) symbol
+=> Destructor can never be static
+=> Destructor has no return type
+=> Destructor takes no argument(No overloading is possible)
+
+Note: if you will not make destructor then compiler will make a empty type destructor ( ~complex(){....})
+
+=> It is invoked implicitly when object is going to destroy.
+(destructor object ko destroy ni krta balki destrucotr object ki zindagi mai chalne wala akhri function hota hai jiske badd
+ object destroy ho jati hai)
+
+Can there be more than one destructor in a class ?
+No, there can only one destructor in a class with classname preceded by ~, no parameters and no return type.
+
+What is the use of destructor if it doesn't destroy the object?
+It is used to release the resources allocated to an object.
+Example
+class string
+{
+private:
+char *s;
+public:
+string (char *c)
+{
+  size = strlen(c);
+  s = new char[size+1];   
+  strcpy(s,c);
+  }
+  ~string()
+  {
+    delete []s;
+    }
+}
+int main()
+{
+ char c[] = "hell0";
+  string s1(c);
+}
+
+Here *s points to the character array, so its necessary to delete that array before the object
+vanishes because after that there will be no pointer which will point to that location and
+it may result in memory leak.
