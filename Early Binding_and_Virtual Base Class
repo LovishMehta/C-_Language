@@ -1,0 +1,60 @@
+Early Binding
+
+C obj;
+obj.f4();
+
+Whenever we call a function in a program, the work of compiler is to bind or map the function
+call with its right defination. This is called early binding.
+
+Virtual Base Class
+Virtual base classes are used in virtual inheritance in a way of preventing multiple “instances”
+of a given class appearing in an inheritance hierarchy when using multiple inheritances.
+
+Class A
+{
+public:
+int a;
+}
+
+class B1:public A
+{
+  public:
+  int b;
+}
+
+Class B2: public A
+{
+  public:
+  int b1;
+}
+
+Class C: public B1, public B2
+{
+ public:
+ int c;
+ }
+ 
+ int main()
+ {
+   C obj;
+   obj.a=10 // error because 2 copies of a got inherited 
+  }
+  
+How to resolve this issue?
+To resolve this ambiguity when class A is inherited in both class B and class C,
+it is declared as virtual base class by placing a keyword virtual.
+
+class B1:virtual public A
+{
+  public:
+  int b;
+}
+
+Class B2:virtual public A
+{
+  public:
+  int b1;
+}
+
+  This makes the Class A the virtual Base class of Class C
+  
