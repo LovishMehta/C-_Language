@@ -1,0 +1,90 @@
+Operator Overloading
+
+=> when an operator is overloaded with multiple jobs, it is known as operator overloading
+=> It is a way to implement compile time polymorphism
+
+Any Symbol can be used as function name
+  -> If it is a valid operator in C language
+  -> If it is preceded by operator keyword
+  Exampe:  operator+(), operator*(), operator++() etc;
+  
+NOTE: We cannot overload "sizeof()" and " ?: " operator 
+
+********************************************
+Binary operator is one which has to operand.
+********************************************
+Example i1+i2;
+ i1,i2 are two operands so +  is binary operator
+ 
+ i1+i2 means = i1.operator+(i2) 
+
+*****************************************************
+Unary Operator (opeator which have only one operand)
+******************************************************
+
+example -x, x++, x--, ++x etc
+
+Increment and decrement operator overloading
+
+If we want to overload "Pre Increment" operator we write
+=>  operator++()              // call this function when somebody uses Pre Increment ++i;
+    { 
+       }
+       
+"Post Increment" operator overlading
+=> operator++(int)            // passing int just means that use this function when somebody calls
+   {                          // i++ i.e. post increment 
+      }
+       
+       
+Example
+
+#include<iostream>
+
+using namespace std;
+
+class integer
+{
+	private:
+		int x;
+		int y;
+	
+	public:
+		void get(int a,int b)
+		{
+			x=a;
+		}
+		
+		void show()
+		{
+			cout<<"value is "<<x<<" "<<y<<endl;
+		}
+		
+		integer operator++() // Pre increment
+		{
+			 integer temp;
+			 temp.x = ++x; 
+			 temp.y = ++y;
+			return temp;
+		}
+    
+    integer operator++(int)    // called in case of Post increment
+		{
+			 integer temp;
+			 temp.x = x++; 
+			 temp.y = y++;
+			return temp;
+		}
+};
+
+int main()
+{
+	integer i1,i2;
+	i1.get(5,0);
+	i1.show();
+	++i1;
+	i1.show();
+	
+	i2 = ++i1;
+	i2.show();
+}
