@@ -1,0 +1,35 @@
+It is the redefinition of base class function in its derived class with same signature i.e return type and parameters.
+
+It can only be done in derived class.
+
+Example
+class A
+{
+   private:
+   int a;
+   public: 
+   int fun()
+   {}
+}
+
+class B : public A
+{
+  int fun() // function overridding. Here we can update the defination of function
+}
+
+int main()
+{
+  A objA,*p; //pointer p can store the adress of both tha base class and derived class(i.e. p = &objA and p = &objB both are correct)
+  B objB;
+  p = &objB;
+  p->fun(); // ab compiler fun() function ko us class mai dhundega jis class se "p" pointer ko bnaya gya hai i.e. A jo ki galat hai,
+               balki compiler ko to us class mai dhundna chahiye jis class ki object ka address "p" pointer mai stored hai i.e. B.
+               So this is the problem with early binding. Compiler looks for the object type of pointer instead of the address stored in it.
+    
+    Now to solve the problem of early binding the concept of virtual function was introduced.
+    -> By writting keyword virtual late binding is done.
+    Is case mai pointer k address ko dekha jata hai jisko vo point kar rha hai na ki pointer kis class se bna hai.
+    
+    To understand clearly watch saurabh shukla video of virtual function.
+    
+    Also visit link: geeksforgeeks.org/early-binding-late-binding-c/
